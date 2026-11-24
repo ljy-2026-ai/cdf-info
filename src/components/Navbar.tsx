@@ -37,6 +37,15 @@ export const Navbar: React.FC<NavbarProps> = ({
     window.scrollTo(0, 0);
   };
 
+  const handleScrollToCredits = () => {
+    setMobileMenuOpen(false);
+    onSetTicketOpen(false);
+    const creditsEl = document.getElementById('about-credits');
+    if (creditsEl) {
+      creditsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   // Close ticket popover when clicking/tapping outside wrapper
   useEffect(() => {
     if (!isTicketOpen) return;
@@ -121,6 +130,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             );
           })}
+          <button
+            type="button"
+            onClick={handleScrollToCredits}
+            className="whitespace-nowrap shrink-0 py-1.5 border-b-2 border-transparent text-[#D1D5DB] hover:text-[#00FF66] transition-colors cursor-pointer"
+          >
+            Credits
+          </button>
         </nav>
 
         {/* Right: Ticket Popover Wrapper + Mobile Hamburger */}
@@ -180,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="button"
                 onClick={() => handleSelectPage(item.id)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`w-full text-left py-3 px-2 text-[15px] border-b border-[rgba(255,255,255,0.08)] last:border-b-0 flex items-center justify-between cursor-pointer transition-colors ${
+                className={`w-full text-left py-3 px-2 text-[15px] border-b border-[rgba(255,255,255,0.08)] flex items-center justify-between cursor-pointer transition-colors ${
                   isActive
                     ? 'text-[#00FF66] font-bold'
                     : 'text-[#D1D5DB] hover:text-[#FFFFFF]'
@@ -192,6 +208,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             );
           })}
+          <button
+            type="button"
+            onClick={handleScrollToCredits}
+            className="w-full text-left py-3 px-2 text-[15px] text-[#D1D5DB] hover:text-[#00FF66] flex items-center justify-between cursor-pointer transition-colors"
+          >
+            <span>Credits</span>
+          </button>
         </nav>
       )}
     </header>

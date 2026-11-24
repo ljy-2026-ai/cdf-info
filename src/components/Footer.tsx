@@ -62,31 +62,58 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Credits: Official Notice Attribution & Prototype AI Disclosure */}
+        {/* About · Credits Section */}
         <section
-          aria-label="Credits"
-          className="bg-[#10141A] border border-[rgba(255,255,255,0.14)] px-5 py-4 space-y-2.5 text-[12px] sm:text-[13px] leading-relaxed"
+          id="about-credits"
+          aria-labelledby="about-credits-heading"
+          className="scroll-mt-24 bg-[#10141A] border border-[rgba(255,255,255,0.14)] px-5 py-5 space-y-3.5 text-[12px] sm:text-[13px] leading-relaxed"
         >
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2.5 border-b border-[rgba(255,255,255,0.10)] pb-3">
             <span className="cdf-nowrap-token font-mono text-[12px] font-bold tracking-[0.08em] text-[#00FF66] bg-[#0B1510] border border-[rgba(0,255,102,0.55)] px-2 py-0.5 uppercase">
-              CREDITS
+              ABOUT · CREDITS
             </span>
-            <h2 className="text-[#FFFFFF] font-bold text-[13px]">
-              공식 공지 출처 및 프로토타입 제작 안내
+            <h2 id="about-credits-heading" className="text-[#FFFFFF] font-bold text-[14px]">
+              About · Credits
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-[#D1D5DB]">
-            <p className="min-w-0">
-              <span className="text-[#FFFFFF] font-semibold">공식 공지 출처:</span>{' '}
-              COUNTDOWN FANTASY 2026-2027 공식 공지 및 공식 SNS(
-              <span className="cdf-nowrap-token font-mono text-[#D1D5DB]">@countdownfantasy</span>
-              ), 주식회사 엠피엠지(MPMG)·민트페이퍼(Mint Paper) 공식 안내 자료를 기반으로 정리되었습니다.
-            </p>
-            <p className="min-w-0">
-              <span className="text-[#FFFFFF] font-semibold">AI 활용 내역:</span>{' '}
-              본 웹 프로토타입은 공식 공지 데이터를 바탕으로 정보 구조화, 반응형 UI/UX 레이아웃 설계, 프로그램 대표 이미지·배경 영상 에셋 제작 및 프론트엔드 코드 구현 과정에 Gemini, Google AI Studio를 활용하여 제작되었습니다.
-            </p>
-          </div>
+
+          <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5 text-[#D1D5DB]">
+            <div className="min-w-0">
+              <dt className="inline text-[#FFFFFF] font-semibold">내가 한 일 : </dt>
+              <dd className="inline">기획, 정보 구성, 화면·수정 방향 결정, 프롬프트 작성</dd>
+            </div>
+
+            <div className="min-w-0">
+              <dt className="inline text-[#FFFFFF] font-semibold">AI가 한 일 : </dt>
+              <dd className="inline">Google AI Studio(Gemini) 기반 구조 및 코드 생성, 수정 보조</dd>
+            </div>
+
+            <div className="min-w-0 md:col-span-2">
+              <dt className="inline text-[#FFFFFF] font-semibold">이미지·영상 : </dt>
+              <dd className="inline">
+                AI 생성 이미지·영상 활용 (Google AI Studio 이미지 생성으로 히어로·Contents 대표 이미지 5종 제작, FFmpeg로 히어로 루프 영상 및 첫 프레임 포스터 가공)
+              </dd>
+            </div>
+
+            <div className="min-w-0 md:col-span-2">
+              <dt className="inline text-[#FFFFFF] font-semibold">글꼴 : </dt>
+              <dd className="inline">
+                Plus Jakarta Sans, JetBrains Mono, Bebas Neue, Do Hyeon, Teko, Nanum Gothic Coding (Google Fonts · SIL Open Font License 1.1)
+              </dd>
+            </div>
+
+            <div className="min-w-0 md:col-span-2">
+              <dt className="inline text-[#FFFFFF] font-semibold">행사 정보·공지 출처 : </dt>
+              <dd className="inline">COUNTDOWN FANTASY 2026-2027 공식 공지(민트페이퍼 / 공식 SNS)</dd>
+            </div>
+
+            <div className="min-w-0 md:col-span-2 pt-2 border-t border-[rgba(255,255,255,0.08)]">
+              <dt className="inline text-[#FFFFFF] font-semibold">안내 : </dt>
+              <dd className="inline">
+                본 페이지는 웹 디자인 수업 과제로 제작한 프로토타입이며, 실제 예매 및 공식 운영은 각 공식 예매처와 주최 측 안내를 따릅니다.
+              </dd>
+            </div>
+          </dl>
         </section>
 
         <div className="pt-6 border-t border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-[12px] text-[#9CA3AF] font-mono cdf-footer-bottom-row">
@@ -102,6 +129,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 {link.label}
               </button>
             ))}
+            <button
+              type="button"
+              onClick={() => {
+                document.getElementById('about-credits')?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                });
+              }}
+              className="cdf-nowrap-token text-[#D1D5DB] hover:text-[#00FF66] cursor-pointer transition-colors"
+            >
+              Credits
+            </button>
           </div>
         </div>
       </div>

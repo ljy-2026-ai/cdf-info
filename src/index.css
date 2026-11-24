@@ -883,12 +883,12 @@
 /* Narrow tablet portrait nav tightening (768px - 835px) */
 @media (min-width: 768px) and (max-width: 835px) and (orientation: portrait) {
   .cdf-brand-logo {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .cdf-desktop-nav {
-    gap: 11px;
-    font-size: 13px;
+    gap: 9px;
+    font-size: 12.5px;
   }
 }
 

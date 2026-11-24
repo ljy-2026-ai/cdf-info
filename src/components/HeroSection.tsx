@@ -166,7 +166,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative cdf-hero-band overflow-hidden">
         {/* Layer 1: Immediate First-Frame Poster / Silent Fallback Background Image */}
         <img
-          src="/assets/hero-festival-poster.jpg"
+          src={`${import.meta.env.BASE_URL}assets/hero-festival-poster.jpg`}
           alt="조명이 쏟아지는 어두운 실내 공연장에서 관객들이 함께 뛰며 열기를 끌어올리는 모습"
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
@@ -184,14 +184,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             disablePictureInPicture
             disableRemotePlayback
             preload="auto"
-            poster="/assets/hero-festival-poster.jpg"
+            poster={`${import.meta.env.BASE_URL}assets/hero-festival-poster.jpg`}
             aria-hidden="true"
             onError={() => setVideoFailed(true)}
             {...({ 'webkit-playsinline': 'true' } as Record<string, string>)}
             className="cdf-hero-bg-video absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
           >
             <source
-              src="/assets/hero-festival-loop.mp4"
+              src={`${import.meta.env.BASE_URL}assets/hero-festival-loop.mp4`}
               type="video/mp4"
               onError={() => setVideoFailed(true)}
             />
@@ -273,6 +273,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="text-[11px] font-bold text-[#00FF66] mt-1">SEC</div>
                 </div>
               </div>
+            </div>
+
+            <div className="flex justify-end pt-1">
+              <span className="cdf-nowrap-token font-mono text-[11px] text-[#D1D5DB] bg-[rgba(8,10,12,0.86)] border border-[rgba(255,255,255,0.16)] px-2 py-0.5">
+                {videoFailed ? 'AI 생성 이미지' : 'AI 생성 영상'}
+              </span>
             </div>
           </div>
         </div>

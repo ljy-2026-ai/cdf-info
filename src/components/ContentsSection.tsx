@@ -96,8 +96,11 @@ export const ContentsSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="relative z-10 pt-3 border-t border-[rgba(255,255,255,0.12)] font-mono text-[11px] text-[#D1D5DB]">
-                상세 운영 안내 추후 공식 SNS 공개
+              <div className="relative z-10 pt-3 border-t border-[rgba(255,255,255,0.12)] flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-[#D1D5DB]">
+                <span>상세 운영 안내 추후 공식 SNS 공개</span>
+                <span className="cdf-nowrap-token text-[11px] text-[#D1D5DB]">
+                  AI 생성 이미지
+                </span>
               </div>
             </article>
           ))}
