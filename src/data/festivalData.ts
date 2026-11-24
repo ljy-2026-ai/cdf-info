@@ -54,7 +54,7 @@ export interface MdFaqItem {
 }
 
 export const FESTIVAL_INFO = {
-  name: 'COUNTDOWN 2026-2027 FANTASY',
+  name: 'COUNTDOWN FANTASY 2026-2027',
   brandLogo: 'COUNTDOWN FANTASY 2026-2027',
   shortName: 'CDF 26>27',
   targetDateTime: '2026-12-31T13:30:00+09:00',
