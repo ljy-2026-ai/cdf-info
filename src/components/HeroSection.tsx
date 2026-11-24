@@ -213,7 +213,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 MINT PAPER / MPMG PRESENTS · PLAY! BETTER HARDER
               </p>
               <h1 className="cdf-hero-title font-extrabold text-[#FFFFFF] tracking-tight">
-                &lt;COUNTDOWN <span className="cdf-nowrap-token">2026-2027</span> FANTASY&gt;
+                &lt;COUNTDOWN FANTASY <span className="cdf-nowrap-token">2026-2027</span>&gt;
               </h1>
               <p className="cdf-hero-schedule font-bold text-[#00FF66]">
                 <span className="cdf-nowrap-token">2026. 12. 31 (THU)</span>{' '}
