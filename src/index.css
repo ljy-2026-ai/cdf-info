@@ -1,0 +1,1072 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    background-color: #080A0C;
+    color: #D1D5DB;
+    font-family: 'Plus Jakarta Sans', 'Nanum Gothic Coding', sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  li,
+  td,
+  th {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .font-sans {
+    font-family: 'Plus Jakarta Sans', 'Nanum Gothic Coding', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Nanum Gothic Coding', monospace;
+  }
+
+  .font-display {
+    font-family: 'Bebas Neue', 'Do Hyeon', 'Teko', sans-serif;
+    letter-spacing: 0.04em;
+  }
+
+  .font-condensed {
+    font-family: 'Teko', 'Bebas Neue', 'Do Hyeon', monospace, sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  /* Fixed Surface & Card Tokens */
+  .cdf-card {
+    background: rgba(16, 20, 26, 0.90);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    min-width: 0;
+  }
+
+  .cdf-card > *,
+  .cdf-stages-grid > *,
+  .cdf-lineup-grid > *,
+  .cdf-contents-grid > *,
+  .cdf-info-list > *,
+  .cdf-md-grid > *,
+  .cdf-baggage-grid > *,
+  td,
+  th {
+    min-width: 0;
+  }
+
+  .cdf-dashed-slot {
+    background: rgba(0, 255, 102, 0.04);
+    border: 1.5px dashed rgba(0, 255, 102, 0.45);
+    color: #00FF66;
+    font-family: 'JetBrains Mono', 'Nanum Gothic Coding', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* Responsive Layout Primitives (Desktop Defaults) */
+  .cdf-header-inner {
+    height: 72px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .cdf-desktop-nav {
+    display: flex;
+  }
+
+  .cdf-mobile-hamburger {
+    display: none;
+  }
+
+  .cdf-mobile-drawer {
+    display: none;
+    flex-direction: column;
+  }
+
+  .cdf-page-shell {
+    padding-top: 104px;
+    padding-bottom: 72px;
+  }
+
+  .cdf-hero-band {
+    padding-top: 104px;
+    padding-bottom: 48px;
+  }
+
+  .cdf-hero-shell {
+    padding-bottom: 72px;
+  }
+
+  .cdf-page-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .cdf-section-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  /* Home Desktop */
+  .cdf-hero-top {
+    padding-top: 24px;
+    padding-bottom: 8px;
+  }
+
+  .cdf-stages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .cdf-stage-card {
+    padding: 24px;
+  }
+
+  .cdf-schedule-box {
+    padding: 28px;
+  }
+
+  .cdf-schedule-cards-portrait {
+    display: none;
+  }
+
+  .cdf-schedule-table-desktop {
+    display: block;
+    width: 100%;
+  }
+
+  /* Lineup Desktop */
+  .cdf-lineup-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .cdf-artist-card {
+    padding: 24px;
+  }
+
+  .cdf-lineup-slot {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  /* Time Table Desktop */
+  .cdf-timetable-slot {
+    min-height: 220px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contents Desktop */
+  .cdf-contents-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cdf-contents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .cdf-content-card {
+    padding: 24px;
+    min-height: 240px;
+  }
+
+  .cdf-contents-more-slot {
+    grid-column: 1 / -1;
+  }
+
+  /* Info Desktop */
+  .cdf-info-wrap {
+    width: 100%;
+  }
+
+  .cdf-info-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-baggage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* MD Desktop */
+  .cdf-md-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cdf-md-card {
+    padding: 28px;
+  }
+
+  /* Footer & Back-To-Top Desktop */
+  .cdf-footer {
+    padding-top: 48px;
+    padding-bottom: 88px;
+  }
+
+  .cdf-footer-bottom-row {
+    padding-right: 64px;
+  }
+}
+
+/* Tablet Landscape Intermediate (769px - 1023px landscape only) */
+@media (min-width: 769px) and (max-width: 1023px) and (orientation: landscape) {
+  .cdf-stages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cdf-lineup-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Subtle Background Pattern (<= 18% opacity) + Dark Readability Scrim */
+.cdf-bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 255, 102, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 102, 0.14) 1px, transparent 1px);
+  opacity: 0.16;
+}
+
+.cdf-bg-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.14;
+}
+
+.cdf-bg-overlay {
+  background-color: rgba(8, 10, 12, 0.82);
+}
+
+.cdf-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 12, 0.74) 0%,
+    rgba(8, 10, 12, 0.72) 58%,
+    rgba(8, 10, 12, 0.95) 90%,
+    #080A0C 100%
+  );
+}
+
+.cdf-hero-bg-video::-webkit-media-controls,
+.cdf-hero-bg-video::-webkit-media-controls-enclosure,
+.cdf-hero-bg-video::-webkit-media-controls-panel,
+.cdf-hero-bg-video::-webkit-media-controls-play-button,
+.cdf-hero-bg-video::-webkit-media-controls-start-playback-button,
+.cdf-hero-bg-video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.cdf-content-card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(16, 20, 26, 0.85);
+  transition: background-color 0.25s ease;
+}
+
+/* Page View Enter Transition */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Unified Filter Tab & Header Control Button (Contents, Lineup, Info 100% pixel-identical) */
+.cdf-tab-btn {
+  height: 36px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(16, 20, 26, 0.90);
+  color: #D1D5DB;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.cdf-tab-btn:hover {
+  border-color: #00FF66;
+  color: #00FF66;
+  background: rgba(0, 255, 102, 0.08);
+}
+
+.cdf-tab-btn.is-active {
+  border-color: #00FF66;
+  color: #00FF66;
+  background: rgba(0, 255, 102, 0.14);
+}
+
+.cdf-tab-btn.is-selected,
+.cdf-tab-btn.is-selected:hover {
+  border-color: #00FF66;
+  background: #00FF66;
+  color: #080A0C;
+}
+
+/* Fluid Typography Scale (clamp across all aspect ratios) */
+.cdf-hero-title {
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.15;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.cdf-hero-schedule {
+  font-size: clamp(15px, 2.2vw, 24px);
+  line-height: 1.35;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.cdf-section-title,
+.cdf-stage-name {
+  font-size: clamp(18px, 2.5vw, 28px);
+  line-height: 1.25;
+  max-width: 100%;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.cdf-card-title,
+.cdf-artist-name {
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.3;
+  max-width: 100%;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.cdf-body-text {
+  font-size: clamp(13px, 1.4vw, 15px);
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.cdf-break-anywhere {
+  max-width: 100%;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.cdf-nowrap-token {
+  white-space: nowrap;
+}
+
+/* Ticket Hover Popover (Desktop Default) */
+.cdf-ticket-popover-bridge {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 8px;
+  z-index: 1000;
+}
+
+.cdf-ticket-popover {
+  width: 360px;
+  max-height: calc(100vh - 84px);
+  overflow-y: auto;
+  background: #10141A;
+  border: 1px solid #00FF66;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
+  text-align: left;
+  min-width: 0;
+}
+
+.cdf-ticket-popover * {
+  min-width: 0;
+}
+
+/* Bottom-Right Floating BackToTop Button */
+.cdf-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 20, 26, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 102, 0.45);
+  color: #00FF66;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.cdf-back-to-top:hover {
+  background: #00FF66;
+  color: #080A0C;
+}
+
+/* ==========================================================================
+   MOBILE PORTRAIT: max-width 767px and orientation portrait
+   ========================================================================== */
+@media (max-width: 767px) and (orientation: portrait) {
+  .cdf-header-inner {
+    height: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cdf-desktop-nav {
+    display: none;
+  }
+
+  .cdf-mobile-hamburger {
+    display: flex;
+  }
+
+  .cdf-mobile-drawer {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cdf-page-shell {
+    padding-top: 76px;
+    padding-bottom: 48px;
+  }
+
+  .cdf-hero-band {
+    padding-top: 76px;
+    padding-bottom: 32px;
+  }
+
+  .cdf-hero-shell {
+    padding-bottom: 48px;
+  }
+
+  .cdf-page-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cdf-section-stack {
+    gap: 32px;
+  }
+
+  .cdf-card-grid {
+    gap: 12px;
+  }
+
+  /* Home Portrait */
+  .cdf-hero-top {
+    min-height: calc(100svh - 60px);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cdf-stages-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-stage-card {
+    padding: 16px;
+  }
+
+  .cdf-schedule-box {
+    padding: 16px;
+  }
+
+  .cdf-schedule-cards-portrait {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-schedule-table-desktop {
+    display: none;
+  }
+
+  /* Lineup Portrait */
+  .cdf-lineup-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .cdf-artist-card {
+    padding: 14px;
+  }
+
+  .cdf-lineup-slot {
+    width: 100%;
+  }
+
+  /* Time Table Portrait */
+  .cdf-timetable-slot {
+    min-height: 220px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contents Portrait */
+  .cdf-contents-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cdf-contents-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-content-card {
+    padding: 16px;
+    min-height: 200px;
+  }
+
+  /* Info Portrait */
+  .cdf-info-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-info-header-btn,
+  .cdf-info-body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cdf-baggage-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* MD Portrait */
+  .cdf-md-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-md-card {
+    padding: 16px;
+  }
+
+  /* Ticket Popover Portrait */
+  .cdf-ticket-popover-bridge {
+    right: -44px;
+  }
+
+  .cdf-ticket-popover {
+    width: calc(100vw - 32px);
+    max-height: calc(100vh - 76px);
+  }
+
+  /* Footer Portrait */
+  .cdf-footer {
+    padding-top: 40px;
+    padding-bottom: 96px;
+  }
+
+  .cdf-footer-bottom-row {
+    padding-right: 64px;
+  }
+}
+
+/* Ultra-narrow portrait fallback (<= 350px) to keep nowrap control buttons inside screen */
+@media (max-width: 350px) and (orientation: portrait) {
+  .cdf-tab-btn {
+    padding: 0 11px;
+    font-size: 11px !important;
+  }
+}
+
+/* ==========================================================================
+   TABLET PORTRAIT: min-width 768px and max-width 1024px and orientation portrait
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  html,
+  body,
+  .cdf-app-root,
+  .cdf-page-shell,
+  .cdf-page-container,
+  .cdf-section-stack,
+  .cdf-card {
+    overflow-x: clip;
+    min-width: 0;
+  }
+
+  .cdf-stages-grid > *,
+  .cdf-lineup-grid > *,
+  .cdf-contents-grid > *,
+  .cdf-info-list > *,
+  .cdf-md-grid > *,
+  .cdf-baggage-grid > * {
+    min-width: 0;
+  }
+
+  .cdf-header-inner {
+    height: 68px;
+    padding-left: 24px;
+    padding-right: 24px;
+    gap: 12px;
+  }
+
+  .cdf-brand-logo {
+    font-size: 13.5px;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  .cdf-desktop-nav {
+    display: flex;
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .cdf-desktop-nav button {
+    white-space: nowrap;
+  }
+
+  .cdf-nav-ticket-btn {
+    font-size: 13px;
+    padding: 7px 14px;
+    white-space: nowrap;
+  }
+
+  .cdf-mobile-hamburger {
+    display: none;
+  }
+
+  .cdf-mobile-drawer {
+    display: none;
+  }
+
+  /* Ticket Popover Tablet Portrait */
+  .cdf-ticket-popover-bridge {
+    right: 0;
+  }
+
+  .cdf-ticket-popover {
+    width: 360px;
+    max-width: calc(100vw - 48px);
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+  }
+
+  .cdf-page-shell {
+    padding-top: 84px;
+    padding-bottom: 56px;
+  }
+
+  .cdf-hero-band {
+    padding-top: 84px;
+    padding-bottom: 40px;
+  }
+
+  .cdf-hero-shell {
+    padding-bottom: 56px;
+  }
+
+  .cdf-page-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .cdf-section-stack {
+    gap: 40px;
+  }
+
+  /* Home Tablet Portrait */
+  .cdf-hero-top {
+    min-height: auto;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .cdf-stages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cdf-stages-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  .cdf-stage-card {
+    padding: 20px;
+  }
+
+  .cdf-schedule-box {
+    padding: 20px;
+  }
+
+  .cdf-schedule-cards-portrait {
+    display: none;
+  }
+
+  .cdf-schedule-table-desktop {
+    display: block;
+    width: 100%;
+    overflow-x: visible;
+  }
+
+  .cdf-schedule-table-desktop table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .cdf-schedule-table-desktop th,
+  .cdf-schedule-table-desktop td {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    min-width: 0;
+  }
+
+  .cdf-schedule-table-desktop th:nth-child(1) {
+    width: 23%;
+  }
+
+  .cdf-schedule-table-desktop th:nth-child(2) {
+    width: 31%;
+  }
+
+  .cdf-schedule-table-desktop th:nth-child(3) {
+    width: 18%;
+  }
+
+  .cdf-schedule-table-desktop th:nth-child(4) {
+    width: 28%;
+  }
+
+  /* Lineup Tablet Portrait */
+  .cdf-lineup-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .cdf-artist-card {
+    padding: 18px;
+  }
+
+  .cdf-lineup-slot {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  /* Time Table Tablet Portrait */
+  .cdf-timetable-slot {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contents Tablet Portrait */
+  .cdf-contents-tabs {
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cdf-contents-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cdf-content-card {
+    padding: 20px;
+  }
+
+  .cdf-contents-more-slot {
+    grid-column: 1 / -1;
+  }
+
+  /* Info Tablet Portrait */
+  .cdf-info-wrap {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .cdf-info-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-baggage-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  /* MD Tablet Portrait */
+  .cdf-md-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cdf-md-card {
+    padding: 22px;
+  }
+
+  /* Footer Tablet Portrait */
+  .cdf-footer {
+    padding-top: 40px;
+    padding-bottom: 92px;
+  }
+
+  .cdf-footer-bottom-row {
+    padding-right: 68px;
+  }
+}
+
+/* Narrow tablet portrait nav tightening (768px - 835px) */
+@media (min-width: 768px) and (max-width: 835px) and (orientation: portrait) {
+  .cdf-brand-logo {
+    font-size: 13px;
+  }
+
+  .cdf-desktop-nav {
+    gap: 11px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE LANDSCAPE: max-width 932px and orientation landscape
+   ========================================================================== */
+@media (max-width: 932px) and (orientation: landscape) {
+  .cdf-header-inner {
+    height: 48px;
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+
+  .cdf-desktop-nav {
+    display: none;
+  }
+
+  .cdf-mobile-hamburger {
+    display: flex;
+  }
+
+  .cdf-mobile-drawer {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+
+  .cdf-page-shell {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .cdf-hero-band {
+    padding-top: 60px;
+    padding-bottom: 28px;
+  }
+
+  .cdf-hero-shell {
+    padding-bottom: 40px;
+  }
+
+  .cdf-page-container {
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+
+  .cdf-section-stack {
+    gap: 28px;
+  }
+
+  /* Home Landscape */
+  .cdf-hero-top {
+    min-height: auto;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    max-width: 780px;
+  }
+
+  .cdf-stages-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .cdf-stage-card {
+    padding: 16px;
+  }
+
+  .cdf-schedule-box {
+    padding: 18px;
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cdf-schedule-cards-portrait {
+    display: none;
+  }
+
+  .cdf-schedule-table-desktop {
+    display: block;
+    width: 100%;
+  }
+
+  /* Lineup Landscape */
+  .cdf-lineup-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .cdf-artist-card {
+    padding: 14px;
+  }
+
+  /* Time Table Landscape */
+  .cdf-timetable-slot {
+    min-height: 160px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contents Landscape */
+  .cdf-contents-wrap {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cdf-contents-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .cdf-content-card {
+    padding: 16px;
+  }
+
+  .cdf-contents-more-slot {
+    grid-column: 1 / -1;
+  }
+
+  /* Info Landscape */
+  .cdf-info-wrap {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cdf-info-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cdf-baggage-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* MD Landscape */
+  .cdf-md-wrap {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cdf-md-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cdf-md-card {
+    padding: 18px;
+  }
+
+  /* Ticket Popover Landscape */
+  .cdf-ticket-popover-bridge {
+    right: -44px;
+  }
+
+  .cdf-ticket-popover {
+    width: min(360px, calc(100vw - 32px));
+    max-height: calc(100vh - 64px);
+  }
+
+  /* Footer Landscape */
+  .cdf-footer {
+    padding-top: 36px;
+    padding-bottom: 96px;
+  }
+
+  .cdf-footer-bottom-row {
+    padding-right: 64px;
+  }
+}

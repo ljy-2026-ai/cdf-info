@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN FANTASY 2026-2027</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        neon: {
+                            green: '#39FF14',
+                            darkGreen: '#1a590a'
+                        },
+                        dark: '#0a0a0a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Cyberpunk Glitch & Glow Effects */
+        .text-glow {
+            text-shadow: 0 0 8px rgba(57, 255, 20, 0.8), 0 0 15px rgba(57, 255, 20, 0.5);
+        }
+        .box-glow {
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3), inset 0 0 10px rgba(57, 255, 20, 0.1);
+        }
+        
+        /* Grid Background for Hero */
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(57, 255, 20, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+        }
+
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            position: absolute;
+            pointer-events: none;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(57,255,20,0.1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { top: -100px; }
+            100% { top: 100%; }
+        }
+        
+        .section-title::before {
+            content: '> ';
+            color: #39FF14;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-neon-green selection:text-black relative">
+
+    <!-- Sticky GNB -->
+    <nav class="fixed top-0 w-full z-40 bg-dark/90 backdrop-blur-md border-b border-neon-green/30" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl md:text-2xl font-black tracking-tighter text-white">
+                        CDF<span class="text-neon-green font-mono ml-1">26>27</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 items-center text-sm font-mono uppercase tracking-wider">
+                    <a href="#lineup" class="text-gray-400 hover:text-neon-green hover:text-glow transition-all">Lineup</a>
+                    <a href="#stages" class="text-gray-400 hover:text-neon-green hover:text-glow transition-all">Stages</a>
+                    <a href="#timetable" class="text-gray-400 hover:text-neon-green hover:text-glow transition-all">Timetable</a>
+                    <a href="#contents" class="text-gray-400 hover:text-neon-green hover:text-glow transition-all">Contents</a>
+                    <a href="#sitemap" class="text-gray-400 hover:text-neon-green hover:text-glow transition-all">Sitemap</a>
+                </div>
+                <!-- Ticketing CTA -->
+                <div class="flex items-center">
+                    <button onclick="toggleModal('ticketModal')" class="bg-neon-green text-black px-6 py-2 font-black uppercase text-sm hover:bg-white hover:text-black transition-colors shadow-[0_0_10px_rgba(57,255,20,0.5)]">
+                        예매하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center relative pt-16 cyber-grid overflow-hidden">
+        <div class="scanline"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark/50 to-dark z-0"></div>
+        
+        <div class="relative z-10 space-y-8 max-w-5xl px-4">
+            <div class="inline-block border border-neon-green/50 text-neon-green px-4 py-1 text-xs md:text-sm font-mono mb-4 tracking-widest bg-neon-darkGreen/20">
+                SYSTEM: FESTIVAL_INITIALIZED // TARGET: KINTEX
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight uppercase tracking-tighter">
+                COUNTDOWN<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-white text-glow">FANTASY</span>
+            </h1>
+            
+            <div class="py-4 space-y-4 font-mono">
+                <p class="text-2xl md:text-4xl font-bold text-gray-300">
+                    2026. 12. 31
+                </p>
+                <p class="text-3xl md:text-5xl font-black text-neon-green text-glow tracking-tighter">
+                    13:30 - 익일 05:00
+                </p>
+            </div>
+
+            <div class="inline-flex items-center gap-2 border-l-4 border-neon-green pl-4 text-left mt-8">
+                <div class="text-neon-green">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-gray-400 text-xs font-mono">LOCATION</p>
+                    <p class="text-white font-bold md:text-xl uppercase tracking-wider">KINTEX HALL 7-8</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lineup Section -->
+    <section id="lineup" class="py-24 relative border-t border-neon-green/20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl md:text-4xl font-black mb-12 text-white font-mono uppercase tracking-wider text-center">LINE-UP</h2>
+            
+            <!-- 1st Lineup -->
+            <div class="mb-16">
+                <div class="text-neon-green font-mono text-sm mb-6 border-b border-neon-green/30 pb-2 inline-block">/// 1ST LINE-UP</div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-6 text-center max-w-5xl mx-auto">
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">극동아시아타이거즈</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">LOW HIGH LOW</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">THE SOLUTIONS</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair text-glow">실리카겔</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">AxMxP</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair text-glow">FTISLAND</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">OYSTERS</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">ONEWE</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">IDIOTAPE</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">KARD</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair">포져군단</span>
+                    <span class="text-3xl md:text-5xl font-black text-white hover:text-neon-green transition-colors cursor-crosshair text-glow">혁오</span>
+                </div>
+            </div>
+
+            <!-- Placeholders -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="border border-dashed border-gray-700 bg-gray-900/50 p-12 text-center rounded-sm">
+                    <p class="text-gray-500 font-mono text-xl tracking-widest uppercase">2nd LINE-UP (TBA)</p>
+                </div>
+                <div class="border border-dashed border-gray-700 bg-gray-900/50 p-12 text-center rounded-sm">
+                    <p class="text-gray-500 font-mono text-xl tracking-widest uppercase">3rd LINE-UP (TBA)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stages Section -->
+    <section id="stages" class="py-24 bg-[#050505] border-t border-neon-green/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl md:text-4xl font-black mb-12 text-white font-mono uppercase tracking-wider text-center">STAGES</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Stage 1 -->
+                <div class="box-glow bg-black border border-neon-green/40 p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-neon-green text-black font-mono text-xs px-2 py-1 font-bold">AREA 01</div>
+                    <h3 class="text-2xl font-black text-white mb-6 group-hover:text-neon-green transition-colors">VIVID PLANET 27</h3>
+                    <div class="flex items-center gap-3 text-neon-green font-mono">
+                        <span class="w-2 h-2 bg-neon-green animate-pulse"></span>
+                        <p class="text-lg font-bold">14:10 - 익일 00:30</p>
+                    </div>
+                </div>
+                
+                <!-- Stage 2 -->
+                <div class="box-glow bg-black border border-neon-green/40 p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-neon-green text-black font-mono text-xs px-2 py-1 font-bold">AREA 02</div>
+                    <h3 class="text-2xl font-black text-white mb-6 group-hover:text-neon-green transition-colors">STATION STARDUST</h3>
+                    <div class="flex items-center gap-3 text-neon-green font-mono">
+                        <span class="w-2 h-2 bg-neon-green animate-pulse"></span>
+                        <p class="text-lg font-bold">15:10 - 익일 02:20</p>
+                    </div>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="box-glow bg-black border border-neon-green/40 p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-neon-green text-black font-mono text-xs px-2 py-1 font-bold">AREA 03</div>
+                    <h3 class="text-2xl font-black text-white mb-6 group-hover:text-neon-green transition-colors">WHITEMOON LOUNGE</h3>
+                    <div class="flex items-center gap-3 text-neon-green font-mono">
+                        <span class="w-2 h-2 bg-neon-green animate-pulse"></span>
+                        <p class="text-lg font-bold">17:40 - 익일 05:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timetable Section -->
+    <section id="timetable" class="py-24 bg-dark border-t border-neon-green/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="section-title text-3xl md:text-4xl font-black mb-12 text-white font-mono uppercase tracking-wider">TIMETABLE</h2>
+            
+            <div class="w-full max-w-4xl mx-auto border border-neon-green/30 bg-neon-darkGreen/10 p-24 box-glow flex flex-col items-center justify-center">
+                <svg class="w-16 h-16 text-neon-green/50 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <p class="text-3xl font-black text-neon-green tracking-widest text-glow">추후 공개 예정</p>
+                <p class="text-gray-400 font-mono mt-4 text-sm">[ DATA NOT FOUND - STANDBY FOR UPLOAD ]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contents Section -->
+    <section id="contents" class="py-24 bg-[#050505] border-t border-neon-green/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-black text-white font-mono uppercase tracking-wider mb-4">CONTENTS</h2>
+                <p class="text-xl text-neon-green font-bold">"공연만 보고 가기엔 콘텐츠가 너무 많습니다."</p>
+                <p class="text-gray-400 mt-2 text-sm">CDF만의 다채로운 현장 콘텐츠가 올해도 돌아옵니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="border border-gray-800 bg-black p-8 text-center hover:border-neon-green/50 transition-colors">
+                    <p class="text-2xl font-black text-white mb-2">트램펄린</p>
+                    <p class="text-gray-500 text-sm font-mono">TRAMPOLINE ZONE</p>
+                </div>
+                <div class="border border-gray-800 bg-black p-8 text-center hover:border-neon-green/50 transition-colors">
+                    <p class="text-2xl font-black text-white mb-2">베개싸움</p>
+                    <p class="text-gray-500 text-sm font-mono">PILLOW FIGHT</p>
+                </div>
+                <div class="border border-gray-800 bg-black p-8 text-center hover:border-neon-green/50 transition-colors">
+                    <p class="text-2xl font-black text-white mb-2">신발 던지기</p>
+                    <p class="text-gray-500 text-sm font-mono">SHOE THROWING</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Map Section -->
+    <section id="sitemap" class="py-24 bg-dark border-y border-neon-green/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="section-title text-3xl md:text-4xl font-black mb-12 text-white font-mono uppercase tracking-wider">SITE MAP</h2>
+            
+            <div class="w-full max-w-4xl mx-auto border border-dashed border-gray-700 bg-gray-900/50 p-24 flex flex-col items-center justify-center">
+                <svg class="w-12 h-12 text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                <p class="text-2xl font-bold text-gray-500 tracking-widest">추후 공개 예정</p>
+                <p class="text-gray-600 font-mono mt-4 text-sm">[ MAP DATA ENCRYPTED ]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticketing Modal -->
+    <div id="ticketModal" class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
+        <!-- Modal Content -->
+        <div class="bg-dark border border-neon-green box-glow w-full max-w-3xl relative overflow-y-auto max-h-[90vh]">
+            <!-- Close Button -->
+            <button onclick="toggleModal('ticketModal')" class="absolute top-4 right-4 text-neon-green hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="p-8 md:p-12">
+                <h3 class="text-3xl font-black text-white mb-2 uppercase tracking-tighter">TICKETS</h3>
+                <p class="text-neon-green font-mono mb-8 text-sm border-b border-neon-green/30 pb-4">공식 예매처를 통해 티켓을 구매하세요.</p>
+                
+                <!-- Ticket Links -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                    <a href="#" class="bg-gray-900 border border-gray-700 text-white text-center py-4 font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition-all block">
+                        NOL
+                    </a>
+                    <a href="#" class="bg-gray-900 border border-gray-700 text-white text-center py-4 font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition-all block">
+                        YES24
+                    </a>
+                    <a href="#" class="bg-gray-900 border border-gray-700 text-white text-center py-4 font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition-all block">
+                        NAVER
+                    </a>
+                    <a href="#" class="bg-gray-900 border border-gray-700 text-white text-center py-4 font-bold hover:bg-neon-green hover:text-black hover:border-neon-green transition-all block">
+                        2TM
+                    </a>
+                </div>
+
+                <!-- Group Booking Section -->
+                <div class="bg-neon-darkGreen/10 border-l-4 border-neon-green p-6">
+                    <h4 class="text-xl font-bold text-neon-green mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        단체 예매 안내
+                    </h4>
+                    <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+                        함께 즐기고자 하는 분들의 단체 관람 안내를 드립니다.<br>
+                        필수 정보를 기재한 후 메일로 보내주시면 순차적으로 회신 드리겠습니다.
+                    </p>
+                    
+                    <ul class="space-y-3 font-mono text-sm mb-6">
+                        <li class="flex flex-col md:flex-row md:items-start gap-1 md:gap-4">
+                            <span class="text-gray-500 md:w-24 shrink-0">E-mail</span>
+                            <span class="text-white break-all">mintpaper@mpmg.co.kr</span>
+                        </li>
+                        <li class="flex flex-col md:flex-row md:items-start gap-1 md:gap-4">
+                            <span class="text-gray-500 md:w-24 shrink-0">메일 제목</span>
+                            <span class="text-neon-green">[CDF2026-2027 단체구매] 단체명</span>
+                        </li>
+                        <li class="flex flex-col md:flex-row md:items-start gap-1 md:gap-4">
+                            <span class="text-gray-500 md:w-24 shrink-0">필수 정보</span>
+                            <span class="text-white">관람일자 / 희망매수 / 단체이름 / 담당자 연락처</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-black/50 p-4 border border-gray-800 text-xs text-gray-400 space-y-1">
+                        <p class="flex items-center gap-2"><span class="text-neon-pink">✔</span> 단체 구매는 20매 이상부터 가능합니다.</p>
+                        <p class="flex items-center gap-2"><span class="text-neon-pink">✔</span> 단체 구매 티켓은 비상업적 용도로만 사용 가능하며, 마케팅, 이벤트 등 사적 활용은 절대 불가합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Modal Toggle Function
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('ticketModal');
+            if (event.target == modal) {
+                toggleModal('ticketModal');
+            }
+        }
+    </script>
+</body>
+</html>

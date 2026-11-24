@@ -1,0 +1,6 @@
+{
+  "name": "COUNTDOWN FANTASY 2026-2027",
+  "description": "2026년 12월 31일 킨텍스에서 펼쳐지는 연말 대표 밴드 페스티벌 카운트다운 판타지(CDF 26>27) 공식 안내 및 예매 웹페이지",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
